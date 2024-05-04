@@ -5,9 +5,8 @@ library(caret)
 library(data.table)
 library(survival)
 
-
-loans.data <-  read.csv("Data\\DataProsper.csv", header = TRUE, sep = ",", na.strings="NA")
-loans.data <- read.csv("Data\\DataProsper.csv", header = TRUE, sep = ",", na.strings="NA")
+filename= "https://s3.amazonaws.com/udacity-hosted-downloads/ud651/prosperLoanData.csv"
+loans.data <-  read.csv(filename, header = TRUE, sep = ",", na.strings="NA")
 dim(loans.data)
 str(loans.data)
 ## Converting a factor variable which is recorded as integer
