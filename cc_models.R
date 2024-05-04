@@ -2,7 +2,8 @@
 #                                Data Cleaning                                            #
 ###########################################################################################
 choose.files()
-loans <- read.csv("C:\\Users\\a0025724\\OneDrive - University of Witwatersrand\\RESEARCH\\Credit Risk Modeling\\Imputation\\Data\\loans_final_jj.csv",header=TRUE,sep=",",na.strings = "NA")
+filename = "loans_final_jj.csv"
+loans <- read.csv(filename,header=TRUE,sep=",",na.strings = "NA")
 loans$time <- as.numeric(loans$time)
 loans$OpenRevolvingMonthlyPayment <- as.numeric(loans$OpenRevolvingMonthlyPayment)
 loans$EmploymentStatusDuration <- as.numeric(loans$EmploymentStatusDuration)
