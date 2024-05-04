@@ -15,7 +15,7 @@ library(censored)
 library(prodlim)
 
 filename = "loans_final_jj.csv"
-loans <- read.table(filename,header=TRUE,sep=",",na.strings = "NA")
+loans <- read.csv(filename,header=TRUE,sep=",",na.strings = "NA")
 #loans <- read.csv("Data/loans_final_jj.csv",header=TRUE,sep=",",na.strings = "NA")
 loans$time <- as.numeric(loans$time)
 loans$OpenRevolvingMonthlyPayment <- as.numeric(loans$OpenRevolvingMonthlyPayment)
