@@ -175,5 +175,13 @@ dim(cens)
 hist(obs$time)
 hist(cens$time)
 
+### variable selection using RandomForest ###
+
+ranger_fit <- ranger(Surv(time,status) ~ .,data=loans_cc,num.trees=250,mtry=6,importance="permutation",seed=2023,splitrule = "extratrees", write.forest=TRUE,verbose = TRUE)
+
+
+Import <- data.frame(sort(round(ranger_fit$variable.importance, 6), decreasing = TRUE))
+names(Import) <- "Importance"
+
 
 
