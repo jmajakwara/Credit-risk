@@ -175,24 +175,5 @@ dim(cens)
 hist(obs$time)
 hist(cens$time)
 
-## Fiting lognormal distribution to cases experience the event of interest
-fit <- fitdistr(obs$time, "lognormal")
-fit$estimate
-fit$sd
 
-fit1 <- fitdistr(cens$time, "lognormal")
-fit1$estimate
-fit1$sd
-
-# Fitting DTIR
-hist(loans_cc$CurrentDelinquencies)
-fit <- fitdistr(loans_cc$CurrentDelinquencies +0.00000001, "lognormal")
-fit$estimate
-fit$sd
-
-fit1 <- fitdistr(loans_cc$DebtToIncomeRatio, "lognormal")
-fit1$estimate
-fit1$sd
-
-table((loans_cc$Term)[loans_cc$Term==36])
 
