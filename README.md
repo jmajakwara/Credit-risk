@@ -4,7 +4,7 @@ The study entailed fitting the generalised gamma regression cure rate model to c
 
 The files are organised as follows:
 1. Data_cleaning.R is code for importing the original data and apply pre-processing techniques
-2. the data utilised after Data_cleaning.R is named loans_final_data.csv
+2. The data utilised after Data_cleaning.R is named loans_final_data.csv
 3. Multicollinerity.R investigate variables that are collinear before applying variable selection
 4. CC_models.R compares the models fitted on complete cases, and
 5. Imputed_ggam.R is the code for imputing and modeling using generalised gamma.
