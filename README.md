@@ -8,4 +8,4 @@ The files are organised as follows:
 3. Multicollinerity.R investigate variables that are collinear before applying variable selection
 4. ggam_cure_profile_lik gives the code for Profile likelihood using generalised gamma model on CC data
 5. model_cc.R provides the results of the specified model fitted on CC data, and
-6. ggam_cure.R and ggam_cure_imputed are the codes for fitting CC and imputed data using generalised gamma cure rate model.
+6. ggam_cure.R and ggam_cure_imputed.R are the codes for fitting CC and imputed data using generalised gamma cure rate model.
