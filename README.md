@@ -6,5 +6,6 @@ The files are organised as follows:
 1. Data_cleaning.R is code for importing the original data and apply pre-processing techniques
 2. The data utilised after Data_cleaning.R is named loans_final_data.csv
 3. Multicollinerity.R investigate variables that are collinear before applying variable selection
-4. CC_models.R compares the models fitted on complete cases, and
-5. Imputed_ggam.R is the code for imputing and modeling using generalised gamma.
+4. ggam_cure_profile_lik gives the code for Profile likelihood using generalised gamma model on CC data
+5. model_cc.R provides the results of the specified model fitted on CC data, and
+6. ggam_cure.R and ggam_cure_imputed are the codes for fitting CC and imputed data using generalised gamma cure rate model.
