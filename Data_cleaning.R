@@ -6,17 +6,22 @@ library(data.table)
 library(survival)
 
 filename= "https://s3.amazonaws.com/udacity-hosted-downloads/ud651/prosperLoanData.csv"
-loans.data <-  read.csv(filename, header = TRUE, sep = ",", na.strings="NA")
+download.file(filename, "temp_loans.csv", mode = "wb")
+
+loans.data <-  read.csv("temp_loans.csv", header = TRUE, sep = ",", na.strings = "NA")
+# Remove temp file 
+unlink("temp_loans.csv")
 dim(loans.data)
 str(loans.data)
-## Converting a factor variable which is recorded as integer
+## Converting a factor variable which is recorded as an integer
 loans.data[, which(colnames(loans.data) == "Term")]<-as.factor(loans.data$Term)
 loans.data[, which(colnames(loans.data) == "ProsperRating..numeric.")]<-as.factor(loans.data$ProsperRating..numeric.)
 #table(loans.data$LoanStatus, useNA = "always")
 table(loans.data$ProsperScore, useNA = "always")
 dim(loans.data)
-max(loans.data$LoanOriginationDate)
-
+# Convert dates
+loans.data$LoanOriginationDate <- as.Date(loans.data$LoanOriginationDate, format = "%Y-%m-%d %H:%M:%S")
+max(loans.data$LoanOriginationDate, na.rm = TRUE)
 
 ## Removing duplicates
 loan_nd<-loans.data[!duplicated(loans.data$LoanKey),]
